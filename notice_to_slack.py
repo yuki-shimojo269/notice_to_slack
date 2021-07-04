@@ -1,9 +1,9 @@
 from slack_sdk import WebClient
 
 class slack_to_Notice:
-    def __init__(self,token_file_path):
+    def __init__(self,token_file_path,text='hogehoge'):
         self.token_file_path = token_file_path
-        self.text = 'finish learning !!'
+        self.text = text
         self.token , self.channel_name = self.get_token_channelID()
         self.client = WebClient(token=self.token)
 
@@ -19,14 +19,18 @@ class slack_to_Notice:
                 channel=self.channel_name,
                 text = self.text
                 )
+    def main(self):
+        try:
+            self.send_messege()
+        except Exception as e:
+            print(e)
+
 
 def main():
     token_path = 'token.ini'
-    notice = slack_to_Notice(token_path)
-    try:
-        notice.send_messege()
-    except Exception as e:
-        print(e)
+    text = 'hogehoge'
+    slack_to_Notice(token_path,text).main()
+
 
 if __name__=='__main__':
     main()
