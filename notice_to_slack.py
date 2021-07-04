@@ -19,6 +19,7 @@ class slack_to_Notice:
                 channel=self.channel_name,
                 text = self.text
                 )
+                
     def main(self):
         try:
             self.send_messege()
