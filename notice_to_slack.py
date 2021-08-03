@@ -26,12 +26,9 @@ class slack_to_Notice:
         except Exception as e:
             print(e)
 
-
-def main():
+def main(text='finish learning!'):
     token_path = 'token.ini'
-    text = 'hogehoge'
-    slack_to_Notice(token_path,text).main()
-
+    slack_to_Notice(token_path, text).main()
 
 if __name__=='__main__':
     main()
