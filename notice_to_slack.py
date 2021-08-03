@@ -27,7 +27,7 @@ class slack_to_Notice:
             print(e)
 
 def main(text='finish learning!'):
-    token_path = 'token.ini'
+    token_path = 'notice_to_slack/token.ini'
     slack_to_Notice(token_path, text).main()
 
 if __name__=='__main__':
